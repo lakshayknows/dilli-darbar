@@ -21,7 +21,7 @@ export default function UseCases() {
       {USE_CASES.map((useCase, i) => (
         <Reveal key={useCase.title} delay={i * 0.1}>
           <div className="bg-cream p-6 h-full">
-            <h3 className="font-display text-ink text-2xl">
+            <h3 className="font-heading text-ink text-2xl">
               {useCase.title}
             </h3>
             <p className="font-body text-ink/70 mt-2">{useCase.body}</p>

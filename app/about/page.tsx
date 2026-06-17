@@ -16,7 +16,7 @@ export default function AboutPage() {
     <main className="bg-maroon min-h-screen">
       <Section bg="maroon" size="hero">
         <Reveal>
-          <h1 className="font-display text-cream text-[14vw] md:text-8xl leading-[0.95]">
+          <h1 className="font-heading text-cream text-[14vw] md:text-8xl leading-[0.95]">
             MADE IN AMAR COLONY.
           </h1>
         </Reveal>
@@ -34,7 +34,7 @@ export default function AboutPage() {
 
       <Section bg="maroon" size="lg" innerClassName="text-center">
         <Reveal>
-          <h2 className="font-display text-cream text-5xl md:text-7xl">
+          <h2 className="font-heading text-cream text-5xl md:text-7xl">
             READY TO ORDER?
           </h2>
         </Reveal>

@@ -38,7 +38,7 @@ export default function CheckoutPage() {
     return (
       <main className="bg-maroon min-h-screen">
         <Section bg="maroon" size="hero" innerClassName="max-w-xl text-center">
-          <h1 className="font-display text-cream text-5xl">Order placed!</h1>
+          <h1 className="font-heading text-cream text-5xl">Order placed!</h1>
           <p className="font-body text-cream/70 mt-4">
             Thank you — your order{" "}
             <span className="text-saffron font-bold">
@@ -68,7 +68,7 @@ export default function CheckoutPage() {
   return (
     <main className="bg-maroon min-h-screen">
       <Section bg="maroon" size="hero" innerClassName="max-w-3xl">
-        <h1 className="font-display text-cream text-5xl md:text-6xl">Checkout</h1>
+        <h1 className="font-heading text-cream text-5xl md:text-6xl">Checkout</h1>
 
         {lines.length === 0 ? (
           <p className="font-body text-cream/70 mt-6">
@@ -111,7 +111,7 @@ export default function CheckoutPage() {
             </form>
 
             <div className="order-1 md:order-2 bg-cream text-ink p-6 h-fit">
-              <h2 className="font-display text-2xl mb-4">Order summary</h2>
+              <h2 className="font-heading text-2xl mb-4">Order summary</h2>
               <ul className="divide-y divide-ink/10">
                 {lines.map((l) => (
                   <li key={l.id} className="flex justify-between py-2 font-body text-sm">

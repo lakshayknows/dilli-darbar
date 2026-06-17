@@ -61,7 +61,7 @@ export default function StickyBar() {
               transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
               className="fixed bottom-0 left-0 right-0 z-50 bg-cream rounded-t-none px-6 py-8 flex flex-col gap-4"
             >
-              <p className="font-display text-2xl text-ink mb-2">
+              <p className="font-heading text-2xl text-ink mb-2">
                 Order from Delhi Darbar
               </p>
               <a

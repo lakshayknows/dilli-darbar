@@ -36,7 +36,7 @@ export default function Reviews() {
   return (
     <Section bg="ink" size="lg">
       <Reveal>
-        <h2 className="font-display text-cream text-5xl md:text-7xl mb-12">
+        <h2 className="font-heading text-cream text-5xl md:text-7xl mb-12">
           WHAT PEOPLE SAY
         </h2>
       </Reveal>

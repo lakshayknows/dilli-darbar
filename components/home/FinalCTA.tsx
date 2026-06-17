@@ -6,7 +6,7 @@ export default function FinalCTA() {
   return (
     <Section bg="saffron" size="lg" innerClassName="text-center">
       <Reveal>
-        <h2 className="font-display text-ink text-5xl md:text-7xl max-w-3xl mx-auto">
+        <h2 className="font-heading text-ink text-5xl md:text-7xl max-w-3xl mx-auto">
           OKAY. WE GOT YOU HUNGRY.
         </h2>
       </Reveal>

@@ -67,7 +67,7 @@ export const menu: MenuItem[] = [
     veg: true,
     category: "DARBAR BOWLS",
     description: "Shahi paneer, saffron rice, papad, kachumber, raita",
-    image: "",
+    image: "/images/bowls/shahi-paneer-bowl.png",
     ingredients: [
       "Paneer",
       "Tomato-cashew gravy",

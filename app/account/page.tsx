@@ -25,7 +25,7 @@ export default async function AccountPage() {
       <Section bg="maroon" size="hero">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h1 className="font-display text-cream text-5xl md:text-6xl">
+            <h1 className="font-heading text-cream text-5xl md:text-6xl">
               {session.user.name ? `Hi, ${session.user.name.split(" ")[0]}` : "My account"}
             </h1>
             <p className="font-body text-cream/60 mt-2">{session.user.email}</p>
@@ -33,7 +33,7 @@ export default async function AccountPage() {
           <SignOutButton />
         </div>
 
-        <h2 className="font-display text-cream text-3xl mt-12 mb-4">
+        <h2 className="font-heading text-cream text-3xl mt-12 mb-4">
           Order history
         </h2>
 
@@ -49,7 +49,7 @@ export default async function AccountPage() {
             {orders.map((order) => (
               <li key={order.id} className="bg-cream text-ink p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="font-display text-xl">
+                  <span className="font-heading text-xl">
                     Order #{order.id.slice(-6).toUpperCase()}
                   </span>
                   <span className="font-body text-xs uppercase tracking-wide bg-ink/10 px-2 py-1">

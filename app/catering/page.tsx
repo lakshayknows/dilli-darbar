@@ -15,7 +15,7 @@ export default function CateringPage() {
     <main className="bg-maroon min-h-screen">
       <Section bg="maroon" size="hero">
       <Reveal>
-        <h1 className="font-display text-cream text-[11vw] md:text-7xl leading-[0.95] max-w-4xl">
+        <h1 className="font-heading text-cream text-[11vw] md:text-7xl leading-[0.95] max-w-4xl">
           FEEDING YOUR OFFICE? YOUR SOCIETY? YOUR FAMILY?
         </h1>
       </Reveal>

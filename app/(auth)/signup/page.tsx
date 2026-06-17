@@ -107,7 +107,7 @@ export default function SignupPage() {
   return (
     <main className="bg-maroon min-h-screen flex items-center justify-center px-6 py-32">
       <div className="w-full max-w-sm">
-        <h1 className="font-display text-cream text-4xl mb-2">Create account</h1>
+        <h1 className="font-heading text-cream text-4xl mb-2">Create account</h1>
         <p className="font-body text-cream/60 mb-8">
           So we know where to send your khana.
         </p>

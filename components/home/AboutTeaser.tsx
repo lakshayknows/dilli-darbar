@@ -16,7 +16,7 @@ export default function AboutTeaser() {
           <span className="font-body font-bold uppercase tracking-[0.2em] text-saffron text-xs">
             Our Story
           </span>
-          <h2 className="font-display text-ink text-4xl md:text-6xl mt-3 leading-[0.95]">
+          <h2 className="font-heading text-ink text-4xl md:text-6xl mt-3 leading-[0.95]">
             A kitchen run by your neighbours.
           </h2>
           <p className="font-body text-ink/75 mt-5 max-w-[480px]">

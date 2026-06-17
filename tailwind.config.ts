@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-gajraj)", "serif"],
+        heading: ["var(--font-archivo-black)", "sans-serif"],
         body: ["var(--font-space-grotesk)", "sans-serif"],
       },
       transitionTimingFunction: {

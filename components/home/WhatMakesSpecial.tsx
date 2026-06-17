@@ -24,7 +24,7 @@ export default function WhatMakesSpecial() {
   return (
     <Section bg="maroon" size="lg">
       <Reveal>
-        <h2 className="font-display text-cream text-5xl md:text-7xl">
+        <h2 className="font-heading text-cream text-5xl md:text-7xl">
           WHAT MAKES US SPECIAL
         </h2>
         <p className="font-body text-cream/70 max-w-[520px] mt-4">
@@ -40,7 +40,7 @@ export default function WhatMakesSpecial() {
               <span className="font-display text-saffron text-2xl">
                 0{i + 1}
               </span>
-              <h3 className="font-display text-cream text-2xl md:text-3xl mt-3 group-hover:text-saffron transition-colors">
+              <h3 className="font-heading text-cream text-2xl md:text-3xl mt-3 group-hover:text-saffron transition-colors">
                 {feature.title}
               </h3>
               <p className="font-body text-cream/70 text-sm mt-3">

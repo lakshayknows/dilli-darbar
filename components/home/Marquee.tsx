@@ -14,7 +14,7 @@ function Track() {
     <div className="flex items-center shrink-0">
       {DISHES.map((dish) => (
         <span key={dish} className="flex items-center">
-          <span className="font-display text-cream text-[26px] px-4 whitespace-nowrap">
+          <span className="font-heading text-cream text-[26px] px-4 whitespace-nowrap">
             {dish}
           </span>
           <span className="w-2 h-2 rounded-full bg-saffron shrink-0" />

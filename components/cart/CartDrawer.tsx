@@ -46,7 +46,7 @@ export default function CartDrawer() {
               max-md:max-h-[88vh] max-md:rounded-t-3xl"
           >
             <div className="flex items-center justify-between px-6 py-5 border-b border-ink/10">
-              <h2 className="font-display text-2xl">
+              <h2 className="font-heading text-2xl">
                 Your Cart{count > 0 ? ` (${count})` : ""}
               </h2>
               <button

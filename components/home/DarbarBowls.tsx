@@ -17,7 +17,7 @@ export default function DarbarBowls() {
   return (
     <Section bg="maroon" size="lg">
       <Reveal>
-        <h2 className="font-display text-cream text-5xl md:text-7xl">
+        <h2 className="font-heading text-cream text-5xl md:text-7xl">
           DARBAR BOWLS
         </h2>
       </Reveal>

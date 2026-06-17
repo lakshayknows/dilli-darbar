@@ -32,8 +32,13 @@ export default function Hero() {
   // order[1] is the centered plate.
   const [order, setOrder] = useState([0, 1, 2]);
 
-  const rotateRight = () => setOrder((p) => [p[1], p[2], p[0]]); // left -> centre
-  const rotateLeft = () => setOrder((p) => [p[2], p[0], p[1]]); // right -> centre
+  // Step through the full deck (not just permute the 3 visible) so every plate
+  // surfaces, including the 4th+ bowl.
+  const len = PLATES.length;
+  const rotateRight = () =>
+    setOrder((p) => [(p[0] - 1 + len) % len, p[0], p[1]]); // left -> centre, new enters left
+  const rotateLeft = () =>
+    setOrder((p) => [p[1], p[2], (p[2] + 1) % len]); // right -> centre, new enters right
 
   const centerIndex = order[1] % PLATES.length;
 
@@ -49,10 +54,6 @@ export default function Hero() {
       className="relative overflow-hidden"
       innerClassName="flex flex-col"
     >
-      <p className="font-body font-medium uppercase tracking-[0.2em] text-cream/60 text-xs md:text-sm text-center">
-        Amar Colony, New Delhi
-      </p>
-
       {/* Wordmark + rotating plates */}
       <div className="relative mt-3 md:mt-5">
         <span className="block text-center font-display text-saffron leading-none text-[7vw] md:text-4xl">
@@ -90,7 +91,7 @@ export default function Hero() {
                   y: { type: "spring", stiffness: 120, damping: 18 },
                   opacity: { duration: 0.4 },
                 }}
-                className={`relative aspect-square shrink-0 drop-shadow-2xl cursor-pointer ${className}`}
+                className={`group relative aspect-square shrink-0 cursor-pointer [filter:drop-shadow(-20px_4px_4px_rgba(0,0,0,0.13))] ${className}`}
               >
                 {/* gentle idle float, layered under the spring transitions */}
                 <motion.span
@@ -111,6 +112,11 @@ export default function Hero() {
                     priority={isCenter}
                   />
                 </motion.span>
+
+                {/* Name reveal on hover */}
+                <span className="pointer-events-none absolute -bottom-1 left-1/2 z-30 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-full bg-ink/85 px-3 py-1 font-body text-[11px] md:text-xs text-cream opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
+                  {plate.name}
+                </span>
               </motion.button>
             );
           })}
@@ -155,7 +161,7 @@ export default function Hero() {
       </div>
 
       {/* Tagline + small CTA */}
-      <p className="text-center font-display text-cream text-2xl md:text-4xl mt-6 leading-tight">
+      <p className="text-center font-heading text-cream text-2xl md:text-4xl mt-6 leading-tight">
         A lot on your plate?{" "}
         <span className="italic text-saffron">Let us handle dinner.</span>
       </p>

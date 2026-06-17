@@ -26,7 +26,7 @@ export default function KitchenStrip() {
             delay={i * 0.15}
             className="py-8 md:py-0 md:px-8 first:md:pl-0 last:md:pr-0"
           >
-            <h3 className="font-display text-cream text-3xl md:text-4xl">
+            <h3 className="font-heading text-cream text-3xl md:text-4xl">
               {col.title}
             </h3>
             <p className="font-body text-cream/75 mt-3 max-w-[280px]">

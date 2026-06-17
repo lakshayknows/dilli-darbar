@@ -10,7 +10,7 @@ export default function MenuPage() {
   return (
     <main className="bg-maroon min-h-screen">
       <Section bg="maroon" size="hero">
-        <h1 className="font-display text-cream text-[14vw] md:text-8xl leading-[0.95]">
+        <h1 className="font-heading text-cream text-[14vw] md:text-8xl leading-[0.95]">
           OUR MENU
         </h1>
         <MenuGrid />
