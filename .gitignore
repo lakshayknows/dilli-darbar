@@ -8,6 +8,9 @@
 /out/
 next-env.d.ts
 
+# prisma generated client (regenerated on build via postinstall)
+/generated
+
 # production
 /build
 
