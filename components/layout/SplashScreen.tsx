@@ -14,49 +14,41 @@ const LANGUAGES = [
   { text: "દિલ્હી દરબાર", lang: "gu" },
 ];
 
+const SESSION_KEY = "hasSeenDilliDarbarSplash";
+
 export default function SplashScreen() {
+  // Start visible so the splash covers the page from the very first paint
+  // (server-rendered). This prevents the "site flashes, then splash appears"
+  // glitch. Returning visitors are hidden immediately in the effect below.
+  const [isVisible, setIsVisible] = useState(true);
   const [index, setIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if the user has already seen the splash screen in this session
-    const hasSeen = sessionStorage.getItem("hasSeenDilliDarbarSplash");
-    
-    if (!hasSeen) {
-      setIsVisible(true);
-      // Prevent scrolling during splash animation
-      document.body.style.overflow = "hidden";
+    if (sessionStorage.getItem(SESSION_KEY)) {
+      // Already seen this session — don't play again.
+      setIsVisible(false);
+      return;
     }
-  }, []);
 
-  useEffect(() => {
-    if (!isVisible) return;
+    document.body.style.overflow = "hidden";
 
-    // Cycle through languages
     const interval = setInterval(() => {
       setIndex((prev) => {
         if (prev === LANGUAGES.length - 1) {
           clearInterval(interval);
-          // Start exit animation after the last language
           setTimeout(() => {
             setIsVisible(false);
-            sessionStorage.setItem("hasSeenDilliDarbarSplash", "true");
+            sessionStorage.setItem(SESSION_KEY, "true");
             document.body.style.overflow = "";
-          }, 600);
+          }, 650);
           return prev;
         }
         return prev + 1;
       });
-    }, 280);
+    }, 480);
 
     return () => {
       clearInterval(interval);
-    };
-  }, [isVisible]);
-
-  // Clean up body scroll lock if component unmounts unexpectedly
-  useEffect(() => {
-    return () => {
       document.body.style.overflow = "";
     };
   }, []);
@@ -66,52 +58,30 @@ export default function SplashScreen() {
       {isVisible && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ 
+          exit={{
             opacity: 0,
             y: "-100%",
-            transition: { 
-              duration: 0.8, 
-              ease: [0.76, 0, 0.24, 1] // Custom easeInOutQuint for premium slide-up
-            }
+            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
           }}
-          className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#FF4D00] overflow-hidden select-none"
+          className="fixed inset-0 z-[99999] bg-[#FF4D00] overflow-hidden select-none"
           style={{ backgroundColor: "#FF4D00" }}
         >
-          {/* Subtle radial glow in the center */}
-          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_center,rgba(245,237,214,0.4)_0%,transparent_65%)] pointer-events-none" />
-          
-          <div className="text-center px-4 relative z-10">
-            <div className="h-24 md:h-36 lg:h-48 flex items-center justify-center overflow-hidden">
-              <AnimatePresence mode="wait">
+          {/* Wordmark — large typography, dead-centre of the viewport. That's it. */}
+          <div className="absolute inset-0 flex items-center justify-center px-4">
+            <div className="relative w-full flex h-28 md:h-44 items-center justify-center">
+              <AnimatePresence>
                 <motion.h1
                   key={index}
-                  initial={{ y: 70, opacity: 0 }}
+                  initial={{ y: 48, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -70, opacity: 0 }}
-                  transition={{
-                    duration: 0.28,
-                    ease: [0.215, 0.61, 0.355, 1], // Custom premium easeOutCubic
-                  }}
-                  className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[#F5EDD6] tracking-tight leading-none text-center"
-                  style={{ fontFamily: "'Gajraj One', serif" }}
+                  exit={{ y: -48, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="absolute inset-0 flex items-center justify-center font-display text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-[#F5EDD6] tracking-tight leading-none"
+                  style={{ fontFamily: "'Gajraj One', sans-serif" }}
                 >
                   {LANGUAGES[index].text}
                 </motion.h1>
               </AnimatePresence>
-            </div>
-            
-            {/* Minimal loader line */}
-            <div className="w-16 h-[2px] bg-[#F5EDD6] opacity-35 mx-auto mt-6 rounded-full overflow-hidden relative">
-              <motion.div
-                className="absolute top-0 left-0 h-full bg-[#F5EDD6]"
-                initial={{ left: "-100%", width: "100%" }}
-                animate={{ left: "100%" }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 1,
-                  ease: "easeInOut",
-                }}
-              />
             </div>
           </div>
         </motion.div>

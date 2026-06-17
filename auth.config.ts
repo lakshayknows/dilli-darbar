@@ -3,6 +3,8 @@ import type { NextAuthConfig } from "next-auth";
 // Edge-safe base config (no Prisma / bcrypt). Shared by middleware and the full
 // node-side config in auth.ts.
 export const authConfig = {
+  // Required on Vercel / behind proxies — otherwise Auth.js throws UntrustedHost.
+  trustHost: true,
   pages: {
     signIn: "/login",
   },
