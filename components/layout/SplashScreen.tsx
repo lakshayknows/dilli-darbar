@@ -51,7 +51,7 @@ export default function SplashScreen() {
           style={{ backgroundColor: "#FF4D00" }}
         >
           {/* Same animated wordmark as the loading screen; plays once, slower. */}
-          {play && <SplashWordmark onComplete={handleComplete} stepMs={950} />}
+          {play && <SplashWordmark onComplete={handleComplete} stepMs={650} />}
         </motion.div>
       )}
     </AnimatePresence>
