@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useSession } from "next-auth/react";
 import Button from "@/components/ui/Button";
 import { useCart } from "@/components/cart/CartProvider";
-import { SWIGGY_URL } from "@/lib/constants";
 
 const NAV_LINKS = [
   { label: "Menu", href: "/menu" },
@@ -95,7 +94,7 @@ export default function Nav() {
               {loggedIn ? "Account" : "Login"}
             </Link>
             <CartButton onClick={openCart} />
-            <Button href={SWIGGY_URL} target="_blank">
+            <Button href="/menu">
               Order Now
             </Button>
           </nav>

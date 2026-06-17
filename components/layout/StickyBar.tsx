@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { WHATSAPP_URL, SWIGGY_URL } from "@/lib/constants";
+import Link from "next/link";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function StickyBar() {
   const [visible, setVisible] = useState(false);
@@ -64,14 +65,13 @@ export default function StickyBar() {
               <p className="font-heading text-2xl text-ink mb-2">
                 Order from Delhi Darbar
               </p>
-              <a
-                href={SWIGGY_URL}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/menu"
+                onClick={() => setSheetOpen(false)}
                 className="min-h-[44px] flex items-center justify-center bg-saffron text-cream font-body font-bold uppercase tracking-wide"
               >
-                Order on Swiggy
-              </a>
+                Order Online
+              </Link>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
