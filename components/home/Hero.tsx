@@ -59,9 +59,13 @@ export default function Hero() {
         <span className="block text-center font-display text-saffron leading-none text-[7vw] md:text-4xl">
           दिल्ली
         </span>
-        <h1 className="font-display text-cream text-center leading-[0.8] select-none text-[24vw] md:text-[14vw] -mt-1">
-          Darbar
-          <sup className="text-saffron align-super text-[0.28em]">™</sup>
+        <h1 className="font-display text-cream text-center leading-[0.8] select-none text-[21vw] md:text-[14vw] -mt-1">
+          <span className="relative inline-block">
+            Darbar
+            <sup className="absolute left-full top-[0.15em] text-saffron text-[0.28em]">
+              ™
+            </sup>
+          </span>
         </h1>
 
         <div className="relative z-10 -mt-[11vw] md:-mt-[6vw] flex items-center justify-center gap-2 sm:gap-8 md:gap-16">

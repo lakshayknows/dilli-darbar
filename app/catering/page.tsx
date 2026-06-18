@@ -7,7 +7,10 @@ import ContactForm from "@/components/catering/ContactForm";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Catering — Delhi Darbar",
+  title: "Bulk Orders & Catering in Amar Colony · Dilli Darbar",
+  description:
+    "Office lunch boxes, birthday parties, society events. Custom menus of home-cooked North Indian food from Dilli Darbar. Enquire on WhatsApp.",
+  alternates: { canonical: "/catering" },
 };
 
 export default function CateringPage() {
