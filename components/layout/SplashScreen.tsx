@@ -34,7 +34,7 @@ export default function SplashScreen() {
       setIsVisible(false);
       sessionStorage.setItem(SESSION_KEY, "true");
       document.body.style.overflow = "";
-    }, 650);
+    }, 300);
   }, []);
 
   return (
@@ -51,7 +51,14 @@ export default function SplashScreen() {
           style={{ backgroundColor: "#FF4D00" }}
         >
           {/* Same animated wordmark as the loading screen; plays once, slower. */}
-          {play && <SplashWordmark onComplete={handleComplete} stepMs={520} />}
+          {play && (
+            <SplashWordmark
+              onComplete={handleComplete}
+              steps={4}
+              stepMs={850}
+              transitionMs={650}
+            />
+          )}
         </motion.div>
       )}
     </AnimatePresence>
